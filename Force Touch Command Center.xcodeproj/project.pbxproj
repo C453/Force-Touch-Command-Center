@@ -10,9 +10,17 @@
 		27E2DF3B1BB49BF800C5CED1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF3A1BB49BF800C5CED1 /* AppDelegate.swift */; };
 		27E2DF3D1BB49BF800C5CED1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF3C1BB49BF800C5CED1 /* ViewController.swift */; };
 		27E2DF3F1BB49BF800C5CED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DF3E1BB49BF800C5CED1 /* Assets.xcassets */; };
-		27E2DF421BB49BF800C5CED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DF401BB49BF800C5CED1 /* Main.storyboard */; };
 		27E2DF4D1BB49BF800C5CED1 /* Force_Touch_Command_CenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF4C1BB49BF800C5CED1 /* Force_Touch_Command_CenterTests.swift */; };
 		27E2DF581BB49BF800C5CED1 /* Force_Touch_Command_CenterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF571BB49BF800C5CED1 /* Force_Touch_Command_CenterUITests.swift */; };
+		27E2DF661BB49C8300C5CED1 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF651BB49C8300C5CED1 /* PopupView.swift */; settings = {ASSET_TAGS = (); }; };
+		27E2DF691BB4A11600C5CED1 /* OptionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF671BB4A11600C5CED1 /* OptionsWindowController.swift */; settings = {ASSET_TAGS = (); }; };
+		27E2DF6A1BB4A11600C5CED1 /* OptionsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DF681BB4A11600C5CED1 /* OptionsWindowController.xib */; settings = {ASSET_TAGS = (); }; };
+		27E2DF6C1BB4A90400C5CED1 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF6B1BB4A90400C5CED1 /* Options.swift */; settings = {ASSET_TAGS = (); }; };
+		27E2DF6E1BB4AD8700C5CED1 /* ForceTouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF6D1BB4AD8700C5CED1 /* ForceTouchButton.swift */; settings = {ASSET_TAGS = (); }; };
+		27E2DF751BB4B45A00C5CED1 /* PopupWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E2DF731BB4B45A00C5CED1 /* PopupWindowController.swift */; settings = {ASSET_TAGS = (); }; };
+		27E2DF761BB4B45A00C5CED1 /* PopupWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DF741BB4B45A00C5CED1 /* PopupWindowController.xib */; settings = {ASSET_TAGS = (); }; };
+		27E2DF791BB4B69500C5CED1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E2DF771BB4B69500C5CED1 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		BFAF2D0D2F2A53BF3BFBC422 /* libPods-Force Touch Command Center.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB2AA9A623F66C466F8FB97 /* libPods-Force Touch Command Center.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +45,6 @@
 		27E2DF3A1BB49BF800C5CED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E2DF3C1BB49BF800C5CED1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27E2DF3E1BB49BF800C5CED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		27E2DF411BB49BF800C5CED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27E2DF431BB49BF800C5CED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27E2DF481BB49BF800C5CED1 /* Force Touch Command CenterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Force Touch Command CenterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E2DF4C1BB49BF800C5CED1 /* Force_Touch_Command_CenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Force_Touch_Command_CenterTests.swift; sourceTree = "<group>"; };
@@ -45,6 +52,18 @@
 		27E2DF531BB49BF800C5CED1 /* Force Touch Command CenterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Force Touch Command CenterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E2DF571BB49BF800C5CED1 /* Force_Touch_Command_CenterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Force_Touch_Command_CenterUITests.swift; sourceTree = "<group>"; };
 		27E2DF591BB49BF800C5CED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27E2DF651BB49C8300C5CED1 /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		27E2DF671BB4A11600C5CED1 /* OptionsWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsWindowController.swift; sourceTree = "<group>"; };
+		27E2DF681BB4A11600C5CED1 /* OptionsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsWindowController.xib; sourceTree = "<group>"; };
+		27E2DF6B1BB4A90400C5CED1 /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		27E2DF6D1BB4AD8700C5CED1 /* ForceTouchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchButton.swift; sourceTree = "<group>"; };
+		27E2DF701BB4B11300C5CED1 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		27E2DF731BB4B45A00C5CED1 /* PopupWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupWindowController.swift; sourceTree = "<group>"; };
+		27E2DF741BB4B45A00C5CED1 /* PopupWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupWindowController.xib; sourceTree = "<group>"; };
+		27E2DF781BB4B69500C5CED1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3CB2AA9A623F66C466F8FB97 /* libPods-Force Touch Command Center.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Force Touch Command Center.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D624CCF7FCC1C1262B9697 /* Pods-Force Touch Command Center.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Force Touch Command Center.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Force Touch Command Center/Pods-Force Touch Command Center.debug.xcconfig"; sourceTree = "<group>"; };
+		B99F5BAA0C2419FB1B4EB8E5 /* Pods-Force Touch Command Center.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Force Touch Command Center.release.xcconfig"; path = "Pods/Target Support Files/Pods-Force Touch Command Center/Pods-Force Touch Command Center.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAF2D0D2F2A53BF3BFBC422 /* libPods-Force Touch Command Center.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,13 +92,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27CB9F7AECB1249B532A7669 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56D624CCF7FCC1C1262B9697 /* Pods-Force Touch Command Center.debug.xcconfig */,
+				B99F5BAA0C2419FB1B4EB8E5 /* Pods-Force Touch Command Center.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		27E2DF2E1BB49BF800C5CED1 = {
 			isa = PBXGroup;
 			children = (
+				27E2DF701BB4B11300C5CED1 /* Bridging-Header.h */,
 				27E2DF391BB49BF800C5CED1 /* Force Touch Command Center */,
 				27E2DF4B1BB49BF800C5CED1 /* Force Touch Command CenterTests */,
 				27E2DF561BB49BF800C5CED1 /* Force Touch Command CenterUITests */,
 				27E2DF381BB49BF800C5CED1 /* Products */,
+				27CB9F7AECB1249B532A7669 /* Pods */,
+				B75B2204A1B645BF75CA4B17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +130,15 @@
 				27E2DF3A1BB49BF800C5CED1 /* AppDelegate.swift */,
 				27E2DF3C1BB49BF800C5CED1 /* ViewController.swift */,
 				27E2DF3E1BB49BF800C5CED1 /* Assets.xcassets */,
-				27E2DF401BB49BF800C5CED1 /* Main.storyboard */,
 				27E2DF431BB49BF800C5CED1 /* Info.plist */,
+				27E2DF771BB4B69500C5CED1 /* Main.storyboard */,
+				27E2DF731BB4B45A00C5CED1 /* PopupWindowController.swift */,
+				27E2DF741BB4B45A00C5CED1 /* PopupWindowController.xib */,
+				27E2DF651BB49C8300C5CED1 /* PopupView.swift */,
+				27E2DF671BB4A11600C5CED1 /* OptionsWindowController.swift */,
+				27E2DF681BB4A11600C5CED1 /* OptionsWindowController.xib */,
+				27E2DF6B1BB4A90400C5CED1 /* Options.swift */,
+				27E2DF6D1BB4AD8700C5CED1 /* ForceTouchButton.swift */,
 			);
 			path = "Force Touch Command Center";
 			sourceTree = "<group>";
@@ -122,6 +161,14 @@
 			path = "Force Touch Command CenterUITests";
 			sourceTree = "<group>";
 		};
+		B75B2204A1B645BF75CA4B17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CB2AA9A623F66C466F8FB97 /* libPods-Force Touch Command Center.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27E2DF5C1BB49BF800C5CED1 /* Build configuration list for PBXNativeTarget "Force Touch Command Center" */;
 			buildPhases = (
+				184D726C089F692B3F4B7C33 /* Check Pods Manifest.lock */,
 				27E2DF331BB49BF800C5CED1 /* Sources */,
 				27E2DF341BB49BF800C5CED1 /* Frameworks */,
 				27E2DF351BB49BF800C5CED1 /* Resources */,
+				095D3BF97F6DCE6DC3382C88 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,7 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E2DF3F1BB49BF800C5CED1 /* Assets.xcassets in Resources */,
-				27E2DF421BB49BF800C5CED1 /* Main.storyboard in Resources */,
+				27E2DF761BB4B45A00C5CED1 /* PopupWindowController.xib in Resources */,
+				27E2DF6A1BB4A11600C5CED1 /* OptionsWindowController.xib in Resources */,
+				27E2DF791BB4B69500C5CED1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,13 +297,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		095D3BF97F6DCE6DC3382C88 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Force Touch Command Center/Pods-Force Touch Command Center-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		184D726C089F692B3F4B7C33 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		27E2DF331BB49BF800C5CED1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27E2DF751BB4B45A00C5CED1 /* PopupWindowController.swift in Sources */,
+				27E2DF691BB4A11600C5CED1 /* OptionsWindowController.swift in Sources */,
+				27E2DF661BB49C8300C5CED1 /* PopupView.swift in Sources */,
 				27E2DF3D1BB49BF800C5CED1 /* ViewController.swift in Sources */,
+				27E2DF6C1BB4A90400C5CED1 /* Options.swift in Sources */,
 				27E2DF3B1BB49BF800C5CED1 /* AppDelegate.swift in Sources */,
+				27E2DF6E1BB4AD8700C5CED1 /* ForceTouchButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,10 +377,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		27E2DF401BB49BF800C5CED1 /* Main.storyboard */ = {
+		27E2DF771BB4B69500C5CED1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				27E2DF411BB49BF800C5CED1 /* Base */,
+				27E2DF781BB4B69500C5CED1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -381,6 +470,7 @@
 		};
 		27E2DF5D1BB49BF800C5CED1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56D624CCF7FCC1C1262B9697 /* Pods-Force Touch Command Center.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -388,11 +478,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.C453.Force-Touch-Command-Center";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		27E2DF5E1BB49BF800C5CED1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B99F5BAA0C2419FB1B4EB8E5 /* Pods-Force Touch Command Center.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -400,6 +492,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.C453.Force-Touch-Command-Center";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -474,6 +567,7 @@
 				27E2DF5E1BB49BF800C5CED1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27E2DF5F1BB49BF800C5CED1 /* Build configuration list for PBXNativeTarget "Force Touch Command CenterTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +576,7 @@
 				27E2DF611BB49BF800C5CED1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27E2DF621BB49BF800C5CED1 /* Build configuration list for PBXNativeTarget "Force Touch Command CenterUITests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +585,7 @@
 				27E2DF641BB49BF800C5CED1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
