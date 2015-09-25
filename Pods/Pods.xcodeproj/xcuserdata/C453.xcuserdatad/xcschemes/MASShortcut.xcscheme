@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B164177EDF7841C27264AB0E"
-               BuildableName = "libMASShortcut.a"
+               BlueprintIdentifier = "B9C9469AFC69273FBE0762B1"
+               BuildableName = "MASShortcut.framework"
                BlueprintName = "MASShortcut"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

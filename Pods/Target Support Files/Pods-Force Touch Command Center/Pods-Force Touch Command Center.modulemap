@@ -1,0 +1,6 @@
+framework module Pods_Force_Touch_Command_Center {
+  umbrella header "Pods-Force Touch Command Center-umbrella.h"
+
+  export *
+  module * { export * }
+}

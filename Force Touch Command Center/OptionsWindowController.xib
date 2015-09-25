@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="OptionsWindowController" customModule="Force_Touch_Command_Center" customModuleProvider="target">
             <connections>
                 <outlet property="ActionComboBox" destination="Quq-P1-WIh" id="zyj-ez-gj1"/>
+                <outlet property="RangeSlider" destination="k6N-Mn-rnF" id="j76-57-hRo"/>
                 <outlet property="shortcutView" destination="IwM-jd-ClC" id="YAr-vz-L4A"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -16,15 +17,15 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Options" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="1440" y="930" width="269" height="113"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="1651" y="1017" width="269" height="183"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="269" height="113"/>
+                <rect key="frame" x="0.0" y="0.0" width="269" height="183"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7EX-VL-ADo">
-                        <rect key="frame" x="18" y="63" width="80" height="17"/>
+                        <rect key="frame" x="11" y="131" width="80" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Command:" id="BHi-ma-ShX">
                             <font key="font" metaFont="system"/>
@@ -33,7 +34,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FKa-PF-7cD">
-                        <rect key="frame" x="18" y="20" width="80" height="17"/>
+                        <rect key="frame" x="11" y="90" width="80" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Action:" id="2hc-s6-98b">
                             <font key="font" metaFont="system"/>
@@ -41,8 +42,17 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dc0-WT-k3c">
+                        <rect key="frame" x="11" y="40" width="89" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Action Range:" id="uHP-QY-2ns">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Quq-P1-WIh">
-                        <rect key="frame" x="104" y="16" width="148" height="26"/>
+                        <rect key="frame" x="104" y="86" width="148" height="26"/>
                         <animations/>
                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Action..." drawsBackground="YES" completes="NO" numberOfVisibleItems="2" id="V6s-Ur-L19">
                             <font key="font" metaFont="system"/>
@@ -58,7 +68,11 @@
                         </connections>
                     </comboBox>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IwM-jd-ClC" customClass="MASShortcutView">
-                        <rect key="frame" x="104" y="59" width="145" height="19"/>
+                        <rect key="frame" x="104" y="129" width="145" height="19"/>
+                        <animations/>
+                    </customView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6N-Mn-rnF" customClass="JMSRangeSlider" customModule="JMSRangeSlider">
+                        <rect key="frame" x="107" y="25" width="142" height="47"/>
                         <animations/>
                     </customView>
                 </subviews>
@@ -67,7 +81,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="217.5" y="470.5"/>
+            <point key="canvasLocation" x="217.5" y="505.5"/>
         </window>
     </objects>
 </document>

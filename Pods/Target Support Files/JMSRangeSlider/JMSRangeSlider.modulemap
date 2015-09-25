@@ -1,0 +1,6 @@
+framework module JMSRangeSlider {
+  umbrella header "JMSRangeSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}

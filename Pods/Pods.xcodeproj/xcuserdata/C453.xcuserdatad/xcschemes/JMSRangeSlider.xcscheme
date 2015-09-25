@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B11B24C9732532D9EB5B5749"
-               BuildableName = "Pods_Force_Touch_Command_Center.framework"
-               BlueprintName = "Pods-Force Touch Command Center"
+               BlueprintIdentifier = "571DB107C502DE0064DF0879"
+               BuildableName = "JMSRangeSlider.framework"
+               BlueprintName = "JMSRangeSlider"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

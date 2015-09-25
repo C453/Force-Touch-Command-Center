@@ -17,14 +17,16 @@ class PopupView: NSView {
         self.layer?.cornerRadius  = Options.CornerRad
         self.layer?.backgroundColor = NSColor(white: 0, alpha: 0.5).CGColor
         
-        TrackingArea = NSTrackingArea(rect: self.bounds, options: [NSTrackingAreaOptions.MouseEnteredAndExited, NSTrackingAreaOptions.ActiveInKeyWindow], owner: self, userInfo: nil)
+        TrackingArea = NSTrackingArea(rect: self.bounds, options: [NSTrackingAreaOptions.MouseEnteredAndExited, NSTrackingAreaOptions.ActiveAlways], owner: self, userInfo: nil)
         
         
         self.addTrackingArea(TrackingArea)
     }
     
     override func mouseExited(theEvent: NSEvent) {
-        Options.popupWindowController?.close()
+        Options.delay(0.25) {
+            Options.popupWindowController?.close()
+        }
         super.mouseExited(theEvent)
     }
 }

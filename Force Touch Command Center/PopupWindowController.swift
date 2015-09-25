@@ -13,65 +13,63 @@ class PopupWindowController: NSWindowController {
     
     @IBOutlet weak var ValueLabel: NSTextField!
     @IBOutlet weak var ValueSlider: NSSlider!
-    
+
     override func windowDidLoad() {
         super.windowDidLoad()
         self.window?.backgroundColor = NSColor.clearColor()
+        //keep GUI on top
         self.window?.level = Int(CGWindowLevelForKey(.MaximumWindowLevelKey))
         ValueLabel.stringValue = ""
         ValueLabel.alphaValue = 0.5
         ValueSlider.alphaValue = 0.5
     }
-    
+
     @IBAction func forceTouchBtnClick(sender: NSButton) {
-        if(sender.doubleValue == 0) { return }
-        
+        if sender.doubleValue == 0 { return }
+
         ValueLabel.stringValue = String(sender.integerValue)
         ValueSlider.integerValue = sender.integerValue
         
-        switch(Options.action) {
+        let increment: Float = ((Options.upperLimit - Options.lowerLimit) / 5)
+
+        //0..1
+        let value = Float(sender.doubleValue) * increment
+        
+        switch Options.action {
         case .Brightness:
-            //0..1
-            setBrightness(Float(sender.doubleValue * 0.2))
+            setBrightness(value)
             return
         case .Volume:
-            //0..1
-            setVolume(Float(sender.doubleValue * 0.2))
-
+            setVolume(value)
             return
         }
     }
     
-    func setBrightness(level:Float) {
-        var iterator:io_iterator_t = 0
-        let result:kern_return_t = IOServiceGetMatchingServices(kIOMasterPortDefault,
+    func setBrightness(level: Float) {
+        var iterator: io_iterator_t = 0
+        let result: kern_return_t = IOServiceGetMatchingServices(kIOMasterPortDefault,
             IOServiceMatching("IODisplayConnect"),
             &iterator);
         
-        if(result != kIOReturnSuccess) { return }
-        
+        if result != kIOReturnSuccess { return }
         var service: io_object_t = 1
-        
-        for ;; {
+        while true {
             service = IOIteratorNext(iterator)
-            
-            if service == 0 {
-                break
-            }
-            
+            if service == 0 { break }
             IODisplaySetFloatParameter(service, 0, kIODisplayBrightnessKey, level)
             IOObjectRelease(service)
         }
     }
-    
-    func setVolume(var level:Float) {
+
+    func setVolume(var level: Float) {
         let volumeSize = UInt32(sizeofValue(level))
-        
+
         var volumePropertyAddress = AudioObjectPropertyAddress(
-            mSelector: AudioObjectPropertySelector(kAudioHardwareServiceDeviceProperty_VirtualMasterVolume),
+            mSelector: AudioObjectPropertySelector(
+                kAudioHardwareServiceDeviceProperty_VirtualMasterVolume),
             mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeOutput),
             mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
-        
+
         AudioHardwareServiceSetPropertyData(
             Options.defaultOutputDeviceID,
             &volumePropertyAddress,
