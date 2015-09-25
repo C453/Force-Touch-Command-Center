@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Force Touch Command Center/PopupView.swift"
-            timestampString = "464830705.628983"
+            timestampString = "464836991.61043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "mouseExited(_:)"
             landmarkType = "5">
          </BreakpointContent>

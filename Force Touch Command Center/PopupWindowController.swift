@@ -11,26 +11,35 @@ import AudioToolbox
 
 class PopupWindowController: NSWindowController {
     
+    @IBOutlet weak var ValueLabel: NSTextField!
+    @IBOutlet weak var ValueSlider: NSSlider!
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         self.window?.backgroundColor = NSColor.clearColor()
         self.window?.level = Int(CGWindowLevelForKey(.MaximumWindowLevelKey))
+        ValueLabel.stringValue = ""
+        ValueLabel.alphaValue = 0.5
+        ValueSlider.alphaValue = 0.5
     }
     
     @IBAction func forceTouchBtnClick(sender: NSButton) {
         if(sender.doubleValue == 0) { return }
         
+        ValueLabel.stringValue = String(sender.integerValue)
+        ValueSlider.integerValue = sender.integerValue
+        
         switch(Options.action) {
         case .Brightness:
+            //0..1
             setBrightness(Float(sender.doubleValue * 0.2))
-            break
+            return
         case .Volume:
-            setVolume(Float(sender.doubleValue - 1))
-            break
-        default:
-            break
+            //0..1
+            setVolume(Float(sender.doubleValue * 0.2))
+
+            return
         }
-        Swift.print("DOME")
     }
     
     func setBrightness(level:Float) {

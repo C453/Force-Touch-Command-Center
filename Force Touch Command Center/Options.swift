@@ -17,10 +17,14 @@ struct Options {
     
     static let kPreferenceGlobalShortcut = "GlobalShortcut";
     
+    static var CornerRad:CGFloat = 30
     static var optionsWindowController : NSWindowController?
     static var popupWindowController : NSWindowController?
     static var defaultOutputDeviceID = AudioDeviceID(0)
     static var action:ActionType = .Brightness
+    
+    static var lowerLimit:Int!
+    static var upperLimit:Int!
     
     static let center:CGPoint = CGPoint(x:CGDisplayPixelsWide(0) / 2, y:CGDisplayPixelsHigh(0) / 2)
     

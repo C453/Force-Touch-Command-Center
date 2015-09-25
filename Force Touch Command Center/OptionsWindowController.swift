@@ -15,15 +15,22 @@ class OptionsWindowController: NSWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-    self.shortcutView.associatedUserDefaultsKey = Options.kPreferenceGlobalShortcut
+        if(Options.action == .Volume) {
+            ActionComboBox.selectItemAtIndex(0)
+        } else {
+            ActionComboBox.selectItemAtIndex(1)
+        }
+        
+        self.shortcutView.associatedUserDefaultsKey = Options.kPreferenceGlobalShortcut
     }
     
     @IBAction func ActionBoxValueChanged(sender: NSComboBox) {
         if(sender.selectedCell()?.title == "Volume") {
             Options.action = .Volume
+            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "Action")
         } else {
             Options.action = .Brightness
+            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "Action")
         }
     }
 }

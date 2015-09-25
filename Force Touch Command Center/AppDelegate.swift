@@ -14,7 +14,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let StatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        switch(NSUserDefaults.standardUserDefaults().integerForKey("Action")) {
+        case 0:
+            Options.action = .Volume
+            break
+        case 1:
+            Options.action = .Brightness
+            break
+        default:
+            Options.action = .Brightness
+            break
+        }
+        
         StatusItem.button?.title = "Options"
+        StatusItem.button?.image = NSImage(named: "statusIcon")
         Options.optionsWindowController = OptionsWindowController(windowNibName: "OptionsWindowController")
         Options.popupWindowController = PopupWindowController(windowNibName: "PopupWindowController")
         
