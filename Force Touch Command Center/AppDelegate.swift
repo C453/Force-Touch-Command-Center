@@ -17,6 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         Options.lowerLimit = NSUserDefaults.standardUserDefaults().floatForKey("lowerLimit")
         Options.upperLimit = NSUserDefaults.standardUserDefaults().floatForKey("upperLimit")
+        
+        assert(Options.lowerLimit < Options.upperLimit)
 
         switch NSUserDefaults.standardUserDefaults().integerForKey("Action") {
         case 0:

@@ -69,7 +69,7 @@ class PopupWindowController: NSWindowController {
                 kAudioHardwareServiceDeviceProperty_VirtualMasterVolume),
             mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeOutput),
             mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
-
+        
         AudioHardwareServiceSetPropertyData(
             Options.defaultOutputDeviceID,
             &volumePropertyAddress,

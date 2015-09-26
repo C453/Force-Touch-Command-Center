@@ -25,7 +25,7 @@ extension NSBezierPath {
         
         // Create path
         let path = CGPathCreateMutable()
-        var points = UnsafeMutablePointer<NSPoint>.alloc(3)
+        let points = UnsafeMutablePointer<NSPoint>.alloc(3)
         let numElements = self.elementCount
         
         if numElements > 0 {

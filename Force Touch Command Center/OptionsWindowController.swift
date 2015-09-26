@@ -40,7 +40,7 @@ class OptionsWindowController: NSWindowController {
             NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "Action")
         }
     }
-    
+
     func updateRange(sender: JMSRangeSlider) {
         Options.lowerLimit = Float(sender.lowerValue)
         Options.upperLimit = Float(sender.upperValue)
