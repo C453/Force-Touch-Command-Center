@@ -31,9 +31,9 @@ class PopupWindowController: NSWindowController {
         ValueSlider.integerValue = sender.integerValue
         
         let increment: Float = ((Options.upperLimit - Options.lowerLimit) / 5)
-
         //0..1
-        let value = Float(sender.doubleValue) * increment
+        let value = Float(sender.doubleValue) * increment  + (Options.lowerLimit)
+
         
         switch Options.action {
         case .Brightness:
