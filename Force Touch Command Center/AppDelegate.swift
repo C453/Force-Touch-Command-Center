@@ -12,28 +12,26 @@ import MASShortcut
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     let StatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+    let settings = NSUserDefaults.standardUserDefaults()
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        Options.lowerLimit = NSUserDefaults.standardUserDefaults().floatForKey("lowerLimit")
-        Options.upperLimit = NSUserDefaults.standardUserDefaults().floatForKey("upperLimit")
+        if settings.boolForKey("notFirstLaunch") == false {
+            //First Launch
+            settings.setBool(true, forKey: "notFirstLaunch")
+            settings.setFloat(Options.lowerLimit, forKey: "lowerLimit")
+            settings.setFloat(Options.upperLimit, forKey: "upperLimit")
+            settings.setBool(Options.showLevel, forKey: "showLevel")
+            settings.setBool(Options.showSlider, forKey: "showSlider")
+            settings.setFloat(Float(Options.Shape.rawValue), forKey: "shapeType")
+            settings.setInteger(Options.action.rawValue, forKey: "action")
+        }
 
-        assert(Options.lowerLimit < Options.upperLimit)
-        
-        if !NSUserDefaults.standardUserDefaults().floatForKey("shapeType").isZero {
-            Options.Shape = Options.ShapeType(rawValue: CGFloat(NSUserDefaults.standardUserDefaults().floatForKey("shapeType")))!
-        }
-        
-        switch NSUserDefaults.standardUserDefaults().integerForKey("Action") {
-        case 0:
-            Options.action = .Volume
-            break
-        case 1:
-            Options.action = .Brightness
-            break
-        default:
-            Options.action = .Brightness
-            break
-        }
+        Options.lowerLimit = settings.floatForKey("lowerLimit")
+        Options.upperLimit = settings.floatForKey("upperLimit")
+        Options.showLevel = settings.boolForKey("showLevel")
+        Options.showSlider = settings.boolForKey("showSlider")
+        Options.Shape = Options.ShapeType(rawValue: CGFloat(settings.floatForKey("shapeType")))!
+        Options.action = Options.ActionType(rawValue: settings.integerForKey("action"))!
 
         StatusItem.button?.title = "Options"
         StatusItem.button?.image = NSImage(named: "statusIcon")
@@ -50,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         StatusItem.menu = menu
 
         Options.getVolumeDevice()
-    MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey("GlobalShortcut") { () -> Void in
+        MASShortcutBinder.sharedBinder().bindShortcutWithDefaultsKey("GlobalShortcut") { () -> Void in
             self.openPopup()
             self.centerCursor()
         }
@@ -70,5 +68,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func centerCursor() {
         CGDisplayMoveCursorToPoint(0, Options.center)
+    }
+
+}
+
+extension Int {
+    func toBool () ->Bool? {
+        switch self {
+        case 0:
+            return false
+        case 1:
+            return true
+        default:
+            return nil
+        }
+    }
+}
+
+extension Bool {
+    func toInt () ->Int? {
+        switch self {
+        case false:
+            return 0
+        case true:
+            return 1
+        default:
+            return nil
+        }
     }
 }

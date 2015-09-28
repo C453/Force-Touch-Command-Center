@@ -23,6 +23,8 @@ class PopupWindowController: NSWindowController {
         ValueLabel.stringValue = ""
         ValueLabel.alphaValue = 0.5
         ValueSlider.alphaValue = 0.5
+        if !Options.showLevel { ValueLabel.hidden = true }
+        if !Options.showSlider { ValueSlider.hidden = true }
     }
 
     @IBAction func forceTouchBtnClick(sender: NSButton) {
@@ -34,7 +36,6 @@ class PopupWindowController: NSWindowController {
         let increment: Float = ((Options.upperLimit - Options.lowerLimit) / 5)
         //0..1
         let value = Float(sender.doubleValue) * increment  + (Options.lowerLimit)
-
 
         switch Options.action {
         case .Brightness:

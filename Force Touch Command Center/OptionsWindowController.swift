@@ -17,6 +17,8 @@ class OptionsWindowController: NSWindowController {
     @IBOutlet weak var ActionComboBox: NSComboBox!
     @IBOutlet weak var shortcutView: MASShortcutView!
     @IBOutlet weak var RangeSlider: JMSRangeSlider!
+    @IBOutlet weak var showSliderCheck: NSButton!
+    @IBOutlet weak var showLevelCheck: NSButton!
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -25,7 +27,8 @@ class OptionsWindowController: NSWindowController {
         
         if(Options.Shape == .Square) { overlayShapeSegmentedControl.selectedSegment = 0 }
         else { overlayShapeSegmentedControl.selectedSegment = 1 }
-
+        showSliderCheck.state = Options.showSlider.boolValue.toInt()!
+        showLevelCheck.state = Options.showLevel.boolValue.toInt()!
         RangeSlider.action = "updateRange:"
         RangeSlider.minValue = 0.1
         RangeSlider.maxValue = 1
@@ -36,13 +39,7 @@ class OptionsWindowController: NSWindowController {
     }
 
     @IBAction func ActionBoxValueChanged(sender: NSComboBox) {
-        if sender.selectedCell()?.title == "Volume" {
-            Options.action = .Volume
-            NSUserDefaults.standardUserDefaults().setInteger(0, forKey: "Action")
-        } else {
-            Options.action = .Brightness
-            NSUserDefaults.standardUserDefaults().setInteger(1, forKey: "Action")
-        }
+            NSUserDefaults.standardUserDefaults().setInteger((sender.selectedCell()?.integerValue)!, forKey: "action")
     }
 
     func updateRange(sender: JMSRangeSlider) {
@@ -66,5 +63,15 @@ class OptionsWindowController: NSWindowController {
         }
         
         NSUserDefaults.standardUserDefaults().setFloat(Float(Options.Shape.rawValue), forKey: "shapeType")
+    }
+
+    @IBAction func showSliderValueChanged(sender: NSButton) {
+        Options.showSlider = sender.state.toBool()!
+        NSUserDefaults.standardUserDefaults().setBool(Options.showSlider, forKey: "showSlider")
+    }
+
+    @IBAction func showLevelValueChanged(sender: NSButton) {
+        Options.showLevel = sender.state.toBool()!
+        NSUserDefaults.standardUserDefaults().setBool(Options.showLevel, forKey: "showLevel")
     }
 }

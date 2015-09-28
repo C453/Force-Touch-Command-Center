@@ -11,6 +11,8 @@
                 <outlet property="RangeSlider" destination="k6N-Mn-rnF" id="j76-57-hRo"/>
                 <outlet property="overlayShapeSegmentedControl" destination="dSF-0L-elW" id="rg7-UY-ehQ"/>
                 <outlet property="shortcutView" destination="IwM-jd-ClC" id="YAr-vz-L4A"/>
+                <outlet property="showLevelCheck" destination="pIB-Rm-7Jb" id="fFj-4O-oup"/>
+                <outlet property="showSliderCheck" destination="9Wz-6T-Y5f" id="l4q-Ib-N3M"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -18,15 +20,15 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Options" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
-            <rect key="contentRect" x="1651" y="1017" width="269" height="255"/>
+            <windowPositionMask key="initialPositionMask" rightStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="1651" y="931" width="269" height="269"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="269" height="255"/>
+                <rect key="frame" x="0.0" y="0.0" width="269" height="269"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7EX-VL-ADo">
-                        <rect key="frame" x="11" y="203" width="80" height="17"/>
+                        <rect key="frame" x="11" y="217" width="80" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Command:" id="BHi-ma-ShX">
                             <font key="font" metaFont="system"/>
@@ -35,7 +37,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FKa-PF-7cD">
-                        <rect key="frame" x="11" y="162" width="80" height="17"/>
+                        <rect key="frame" x="11" y="176" width="80" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Action:" id="2hc-s6-98b">
                             <font key="font" metaFont="system"/>
@@ -44,7 +46,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dc0-WT-k3c">
-                        <rect key="frame" x="11" y="112" width="89" height="17"/>
+                        <rect key="frame" x="11" y="126" width="89" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Action Range:" id="uHP-QY-2ns">
                             <font key="font" metaFont="system"/>
@@ -53,7 +55,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DyU-aj-k8O">
-                        <rect key="frame" x="11" y="62" width="103" height="17"/>
+                        <rect key="frame" x="11" y="76" width="103" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Overlay Shape*:" id="vsN-bQ-C9g">
                             <font key="font" metaFont="system"/>
@@ -62,7 +64,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HAd-ny-Ffn">
-                        <rect key="frame" x="4" y="6" width="110" height="17"/>
+                        <rect key="frame" x="4" y="12" width="126" height="17"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="*Requires Restart" id="jft-o5-Vyf">
                             <font key="font" metaFont="system"/>
@@ -71,7 +73,7 @@
                         </textFieldCell>
                     </textField>
                     <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Quq-P1-WIh">
-                        <rect key="frame" x="104" y="158" width="148" height="26"/>
+                        <rect key="frame" x="104" y="172" width="148" height="26"/>
                         <animations/>
                         <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Action..." drawsBackground="YES" completes="NO" numberOfVisibleItems="2" id="V6s-Ur-L19">
                             <font key="font" metaFont="system"/>
@@ -87,15 +89,15 @@
                         </connections>
                     </comboBox>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IwM-jd-ClC" customClass="MASShortcutView">
-                        <rect key="frame" x="104" y="201" width="145" height="19"/>
+                        <rect key="frame" x="104" y="215" width="145" height="19"/>
                         <animations/>
                     </customView>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6N-Mn-rnF" customClass="JMSRangeSlider" customModule="JMSRangeSlider">
-                        <rect key="frame" x="107" y="97" width="142" height="47"/>
+                        <rect key="frame" x="107" y="111" width="142" height="47"/>
                         <animations/>
                     </customView>
                     <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSF-0L-elW">
-                        <rect key="frame" x="116" y="57" width="125" height="24"/>
+                        <rect key="frame" x="116" y="71" width="125" height="24"/>
                         <animations/>
                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="obI-h1-C2n">
                             <font key="font" metaFont="system"/>
@@ -108,13 +110,35 @@
                             <action selector="overlayShapeBtnValueChanged:" target="-2" id="k56-GD-70d"/>
                         </connections>
                     </segmentedControl>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pIB-Rm-7Jb">
+                        <rect key="frame" x="140" y="35" width="101" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="Show Level*" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="J52-Ma-47Y">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showLevelValueChanged:" target="-2" id="6XP-Mz-ORg"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Wz-6T-Y5f">
+                        <rect key="frame" x="29" y="35" width="101" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="Show Slider*" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="OoB-8W-sSo">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="showSliderValueChanged:" target="-2" id="euv-jz-LWb"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="213.5" y="544.5"/>
+            <point key="canvasLocation" x="213.5" y="551.5"/>
         </window>
     </objects>
 </document>

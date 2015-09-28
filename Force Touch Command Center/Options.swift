@@ -11,8 +11,9 @@ import AudioToolbox
 
 struct Options {
 
-    enum ActionType {
-        case Volume, Brightness
+    enum ActionType: Int {
+        case Volume = 0
+        case Brightness = 1
     }
 
     enum ShapeType: CGFloat {
@@ -29,6 +30,8 @@ struct Options {
     static var lowerLimit: Float = 0.1
     static var upperLimit: Float = 1
     static var Shape: ShapeType = .Square
+    static var showSlider:Bool = true
+    static var showLevel:Bool = true
 
     static let center: CGPoint = CGPoint(x: CGDisplayPixelsWide(0) / 2,
         y: CGDisplayPixelsHigh(0) / 2)
