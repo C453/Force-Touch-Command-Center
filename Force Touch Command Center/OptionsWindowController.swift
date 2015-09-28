@@ -12,17 +12,19 @@ import JMSRangeSlider
 
 class OptionsWindowController: NSWindowController {
 
+    
+    @IBOutlet weak var overlayShapeSegmentedControl: NSSegmentedControl!
     @IBOutlet weak var ActionComboBox: NSComboBox!
     @IBOutlet weak var shortcutView: MASShortcutView!
     @IBOutlet weak var RangeSlider: JMSRangeSlider!
 
     override func windowDidLoad() {
         super.windowDidLoad()
-        if Options.action == .Volume {
-            ActionComboBox.selectItemAtIndex(0)
-        } else {
-            ActionComboBox.selectItemAtIndex(1)
-        }
+        if Options.action == .Volume { ActionComboBox.selectItemAtIndex(0) }
+        else { ActionComboBox.selectItemAtIndex(1) }
+        
+        if(Options.Shape == .Square) { overlayShapeSegmentedControl.selectedSegment = 0 }
+        else { overlayShapeSegmentedControl.selectedSegment = 1 }
 
         RangeSlider.action = "updateRange:"
         RangeSlider.minValue = 0.1
@@ -49,5 +51,20 @@ class OptionsWindowController: NSWindowController {
 
         NSUserDefaults.standardUserDefaults().setFloat(Options.lowerLimit, forKey: "lowerLimit")
         NSUserDefaults.standardUserDefaults().setFloat(Options.upperLimit, forKey: "upperLimit")
+    }
+    
+    @IBAction func overlayShapeBtnValueChanged(sender: NSSegmentedControl) {
+        switch(sender.selectedSegment) {
+        case 0:
+            Options.Shape = .Square
+            break
+        case 1:
+            Options.Shape = .Circle
+            break
+        default:
+            break
+        }
+        
+        NSUserDefaults.standardUserDefaults().setFloat(Float(Options.Shape.rawValue), forKey: "shapeType")
     }
 }

@@ -14,12 +14,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let StatusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-
         Options.lowerLimit = NSUserDefaults.standardUserDefaults().floatForKey("lowerLimit")
         Options.upperLimit = NSUserDefaults.standardUserDefaults().floatForKey("upperLimit")
 
         assert(Options.lowerLimit < Options.upperLimit)
-
+        
+        if !NSUserDefaults.standardUserDefaults().floatForKey("shapeType").isZero {
+            Options.Shape = Options.ShapeType(rawValue: CGFloat(NSUserDefaults.standardUserDefaults().floatForKey("shapeType")))!
+        }
+        
         switch NSUserDefaults.standardUserDefaults().integerForKey("Action") {
         case 0:
             Options.action = .Volume

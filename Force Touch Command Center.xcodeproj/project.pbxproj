@@ -41,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		273D97851BB8F9EF008F50D2 /* Force Touch Command Center.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Force Touch Command Center.entitlements"; sourceTree = "<group>"; };
 		27E2DF371BB49BF800C5CED1 /* Force Touch Command Center.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Force Touch Command Center.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E2DF3A1BB49BF800C5CED1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E2DF3C1BB49BF800C5CED1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		27E2DF391BB49BF800C5CED1 /* Force Touch Command Center */ = {
 			isa = PBXGroup;
 			children = (
+				273D97851BB8F9EF008F50D2 /* Force Touch Command Center.entitlements */,
 				27E2DF3A1BB49BF800C5CED1 /* AppDelegate.swift */,
 				27E2DF3C1BB49BF800C5CED1 /* ViewController.swift */,
 				27E2DF3E1BB49BF800C5CED1 /* Assets.xcassets */,
@@ -240,6 +242,12 @@
 				TargetAttributes = {
 					27E2DF361BB49BF800C5CED1 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = SA9H558Q9R;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					27E2DF471BB49BF800C5CED1 = {
 						CreatedOnToolsVersion = 7.0;
@@ -504,6 +512,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Force Touch Command Center/Force Touch Command Center.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Force Touch Command Center/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -520,6 +530,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Force Touch Command Center/Force Touch Command Center.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Force Touch Command Center/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

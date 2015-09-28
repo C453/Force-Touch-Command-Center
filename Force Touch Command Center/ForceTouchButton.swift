@@ -13,7 +13,7 @@ class ForceTouchButton: NSButton {
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         self.wantsLayer = true
-        self.layer?.cornerRadius  = Options.CornerRad
+        self.layer?.cornerRadius  = Options.Shape.rawValue
         self.alphaValue = 0.0001
         // Drawing code here.
     }

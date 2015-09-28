@@ -14,13 +14,12 @@ class PopupView: NSView {
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         self.wantsLayer = true
-        self.layer?.cornerRadius  = Options.CornerRad
+        self.layer?.cornerRadius  = Options.Shape.rawValue
         self.layer?.backgroundColor = NSColor(white: 0, alpha: 0.5).CGColor
 
         TrackingArea = NSTrackingArea(rect: self.bounds, options:
             [NSTrackingAreaOptions.MouseEnteredAndExited, NSTrackingAreaOptions.ActiveAlways],
             owner: self, userInfo: nil)
-
 
         self.addTrackingArea(TrackingArea)
     }

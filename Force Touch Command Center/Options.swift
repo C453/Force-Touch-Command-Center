@@ -15,15 +15,20 @@ struct Options {
         case Volume, Brightness
     }
 
+    enum ShapeType: CGFloat {
+        case Square = 30.0
+        case Circle = 150.0
+    }
+
     static let kPreferenceGlobalShortcut = "GlobalShortcut";
 
-    static var CornerRad: CGFloat = 30
     static var optionsWindowController: NSWindowController?
     static var popupWindowController: NSWindowController?
     static var defaultOutputDeviceID = AudioDeviceID(0)
     static var action: ActionType = .Brightness
     static var lowerLimit: Float = 0.1
     static var upperLimit: Float = 1
+    static var Shape: ShapeType = .Square
 
     static let center: CGPoint = CGPoint(x: CGDisplayPixelsWide(0) / 2,
         y: CGDisplayPixelsHigh(0) / 2)
