@@ -27,6 +27,8 @@ class OptionsWindowController: NSWindowController {
         RangeSlider.action = "updateRange:"
         RangeSlider.minValue = 0.1
         RangeSlider.maxValue = 1
+        RangeSlider.lowerValue = Double(Options.lowerLimit)
+        RangeSlider.upperValue = Double(Options.upperLimit)
 
         self.shortcutView.associatedUserDefaultsKey = Options.kPreferenceGlobalShortcut
     }
