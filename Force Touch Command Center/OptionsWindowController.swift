@@ -11,11 +11,11 @@ import MASShortcut
 import JMSRangeSlider
 
 class OptionsWindowController: NSWindowController {
-    
+
     @IBOutlet weak var ActionComboBox: NSComboBox!
     @IBOutlet weak var shortcutView: MASShortcutView!
     @IBOutlet weak var RangeSlider: JMSRangeSlider!
-    
+
     override func windowDidLoad() {
         super.windowDidLoad()
         if Options.action == .Volume {
@@ -23,14 +23,14 @@ class OptionsWindowController: NSWindowController {
         } else {
             ActionComboBox.selectItemAtIndex(1)
         }
-        
+
         RangeSlider.action = "updateRange:"
         RangeSlider.minValue = 0.1
         RangeSlider.maxValue = 1
-        
+
         self.shortcutView.associatedUserDefaultsKey = Options.kPreferenceGlobalShortcut
     }
-    
+
     @IBAction func ActionBoxValueChanged(sender: NSComboBox) {
         if sender.selectedCell()?.title == "Volume" {
             Options.action = .Volume
@@ -44,7 +44,7 @@ class OptionsWindowController: NSWindowController {
     func updateRange(sender: JMSRangeSlider) {
         Options.lowerLimit = Float(sender.lowerValue)
         Options.upperLimit = Float(sender.upperValue)
-        
+
         NSUserDefaults.standardUserDefaults().setFloat(Options.lowerLimit, forKey: "lowerLimit")
         NSUserDefaults.standardUserDefaults().setFloat(Options.upperLimit, forKey: "upperLimit")
     }

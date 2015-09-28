@@ -8,9 +8,10 @@
 
 import Cocoa
 import AudioToolbox
+import ForceFeedback
 
 class PopupWindowController: NSWindowController {
-    
+
     @IBOutlet weak var ValueLabel: NSTextField!
     @IBOutlet weak var ValueSlider: NSSlider!
 
@@ -29,12 +30,12 @@ class PopupWindowController: NSWindowController {
 
         ValueLabel.stringValue = String(sender.integerValue)
         ValueSlider.integerValue = sender.integerValue
-        
+
         let increment: Float = ((Options.upperLimit - Options.lowerLimit) / 5)
         //0..1
         let value = Float(sender.doubleValue) * increment  + (Options.lowerLimit)
 
-        
+
         switch Options.action {
         case .Brightness:
             setBrightness(value)
@@ -44,13 +45,13 @@ class PopupWindowController: NSWindowController {
             return
         }
     }
-    
+
     func setBrightness(level: Float) {
         var iterator: io_iterator_t = 0
         let result: kern_return_t = IOServiceGetMatchingServices(kIOMasterPortDefault,
             IOServiceMatching("IODisplayConnect"),
             &iterator);
-        
+
         if result != kIOReturnSuccess { return }
         var service: io_object_t = 1
         while true {
@@ -69,7 +70,7 @@ class PopupWindowController: NSWindowController {
                 kAudioHardwareServiceDeviceProperty_VirtualMasterVolume),
             mScope: AudioObjectPropertyScope(kAudioDevicePropertyScopeOutput),
             mElement: AudioObjectPropertyElement(kAudioObjectPropertyElementMaster))
-        
+
         AudioHardwareServiceSetPropertyData(
             Options.defaultOutputDeviceID,
             &volumePropertyAddress,

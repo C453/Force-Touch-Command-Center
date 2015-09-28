@@ -182,6 +182,7 @@
 				27E2DF351BB49BF800C5CED1 /* Resources */,
 				095D3BF97F6DCE6DC3382C88 /* Copy Pods Resources */,
 				F2905DF8C87D01C63F216353 /* Embed Pods Frameworks */,
+				27647F8F1BB6F1D400A0776C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -328,6 +329,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		27647F8F1BB6F1D400A0776C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#/usr/local/bin/swiftlint";
 		};
 		F2905DF8C87D01C63F216353 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

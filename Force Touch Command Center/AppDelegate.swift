@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         Options.lowerLimit = NSUserDefaults.standardUserDefaults().floatForKey("lowerLimit")
         Options.upperLimit = NSUserDefaults.standardUserDefaults().floatForKey("upperLimit")
-        
+
         assert(Options.lowerLimit < Options.upperLimit)
 
         switch NSUserDefaults.standardUserDefaults().integerForKey("Action") {
@@ -34,11 +34,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         StatusItem.button?.title = "Options"
         StatusItem.button?.image = NSImage(named: "statusIcon")
-        Options.optionsWindowController = OptionsWindowController(windowNibName: "OptionsWindowController")
-        Options.popupWindowController = PopupWindowController(windowNibName: "PopupWindowController")
+        Options.optionsWindowController = OptionsWindowController(
+            windowNibName: "OptionsWindowController")
+        Options.popupWindowController = PopupWindowController(
+            windowNibName: "PopupWindowController")
 
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Options", action: Selector("openOptions"), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Options", action: Selector(
+            "openOptions"), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: ""))
 
         StatusItem.menu = menu
