@@ -9,19 +9,20 @@
 import Foundation
 import AudioToolbox
 
+enum ActionType: Int {
+    case Volume = 0
+    case Brightness = 1
+}
+
+enum ShapeType: CGFloat {
+    case Square = 30.0
+    case Circle = 150.0
+}
+
 struct Options {
-
-    enum ActionType: Int {
-        case Volume = 0
-        case Brightness = 1
-    }
-
-    enum ShapeType: CGFloat {
-        case Square = 30.0
-        case Circle = 150.0
-    }
-
     static let kPreferenceGlobalShortcut = "GlobalShortcut";
+    static let center: CGPoint = CGPoint(x: CGDisplayPixelsWide(0) / 2,
+        y: CGDisplayPixelsHigh(0) / 2)
 
     static var optionsWindowController: NSWindowController?
     static var popupWindowController: NSWindowController?
@@ -33,11 +34,8 @@ struct Options {
     static var showSlider:Bool = true
     static var showLevel:Bool = true
 
-    static let center: CGPoint = CGPoint(x: CGDisplayPixelsWide(0) / 2,
-        y: CGDisplayPixelsHigh(0) / 2)
-
     static func getVolumeDevice() {
-        var defaultOutputDeviceIDSize = UInt32(sizeofValue(Options.defaultOutputDeviceID))
+        var defaultOutputDeviceIDSize = UInt32(sizeofValue(defaultOutputDeviceID))
         var getDefaultOutputDevicePropertyAddress = AudioObjectPropertyAddress(
             mSelector: AudioObjectPropertySelector(kAudioHardwarePropertyDefaultOutputDevice),
             mScope: AudioObjectPropertyScope(kAudioObjectPropertyScopeGlobal),
@@ -49,7 +47,7 @@ struct Options {
             0,
             nil,
             &defaultOutputDeviceIDSize,
-            &Options.defaultOutputDeviceID)
+            &defaultOutputDeviceID)
     }
 
     static func delay(delay: Double, block:()->())

@@ -20,7 +20,6 @@ class PopupWindowController: NSWindowController {
         self.window?.backgroundColor = NSColor.clearColor()
         //keep GUI on top
         self.window?.level = Int(CGWindowLevelForKey(.MaximumWindowLevelKey))
-        ValueLabel.stringValue = ""
         ValueLabel.alphaValue = 0.5
         ValueSlider.alphaValue = 0.5
         if !Options.showLevel { ValueLabel.hidden = true }
@@ -28,7 +27,20 @@ class PopupWindowController: NSWindowController {
     }
 
     @IBAction func forceTouchBtnClick(sender: NSButton) {
+        //prevent value from changing when finger leaves touchpad
         if sender.doubleValue == 0 { return }
+
+        /*
+            NSButton returns a value of 0-5, here we
+            must convert that to a value from 0 to 1.
+        
+            In the future, if we want a range greater
+            than 1-5, we can call:
+                NSHapticFeedbackManager.defaultPerformer().
+                performFeedbackPattern(.Generic, 
+                performanceTime: .Now)
+            to simulate a increment.
+        */
 
         ValueLabel.stringValue = String(sender.integerValue)
         ValueSlider.integerValue = sender.integerValue

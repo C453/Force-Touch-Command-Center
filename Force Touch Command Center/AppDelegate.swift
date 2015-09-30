@@ -30,8 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Options.upperLimit = settings.floatForKey("upperLimit")
         Options.showLevel = settings.boolForKey("showLevel")
         Options.showSlider = settings.boolForKey("showSlider")
-        Options.Shape = Options.ShapeType(rawValue: CGFloat(settings.floatForKey("shapeType")))!
-        Options.action = Options.ActionType(rawValue: settings.integerForKey("action"))!
+        Options.Shape = ShapeType(rawValue: CGFloat(settings.floatForKey("shapeType")))!
+        Options.action = ActionType(rawValue: settings.integerForKey("action"))!
 
         StatusItem.button?.title = "Options"
         StatusItem.button?.image = NSImage(named: "statusIcon")
@@ -70,30 +70,4 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         CGDisplayMoveCursorToPoint(0, Options.center)
     }
 
-}
-
-extension Int {
-    func toBool () ->Bool? {
-        switch self {
-        case 0:
-            return false
-        case 1:
-            return true
-        default:
-            return nil
-        }
-    }
-}
-
-extension Bool {
-    func toInt () ->Int? {
-        switch self {
-        case false:
-            return 0
-        case true:
-            return 1
-        default:
-            return nil
-        }
-    }
 }

@@ -12,7 +12,6 @@ import JMSRangeSlider
 
 class OptionsWindowController: NSWindowController {
 
-    
     @IBOutlet weak var overlayShapeSegmentedControl: NSSegmentedControl!
     @IBOutlet weak var ActionComboBox: NSComboBox!
     @IBOutlet weak var shortcutView: MASShortcutView!
@@ -34,6 +33,9 @@ class OptionsWindowController: NSWindowController {
         RangeSlider.maxValue = 1
         RangeSlider.lowerValue = Double(Options.lowerLimit)
         RangeSlider.upperValue = Double(Options.upperLimit)
+        RangeSlider.trackHighlightTintColor = NSColor(red: 0.4, green: 0.698, blue: 1.0, alpha: 1.0)
+        RangeSlider.cellWidth = 20
+        RangeSlider.cellHeight = 30
 
         self.shortcutView.associatedUserDefaultsKey = Options.kPreferenceGlobalShortcut
     }
@@ -61,7 +63,7 @@ class OptionsWindowController: NSWindowController {
         default:
             break
         }
-        
+
         NSUserDefaults.standardUserDefaults().setFloat(Float(Options.Shape.rawValue), forKey: "shapeType")
     }
 
